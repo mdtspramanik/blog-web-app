@@ -1,0 +1,107 @@
+<%- include("partials/header.ejs") %>
+
+    <main>
+
+        <!-- Random Post section -->
+        <section>
+            <div class="m-3">
+                <h1 class="fst-italic fw-normal fs-2 text-secondary">Random Post</h1>
+            </div>
+            <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+                <div class="col-lg-6 px-0">
+                    <% if (locals.randomPost) { %>
+                        <strong class="d-inline-block mb-2 text-primary-emphasis">
+                            <%= randomPost.topic %>
+                        </strong>
+                        <div class="mb-1 text-body-secondary">
+                            <%= randomPost.author %>
+                        </div>
+                        <h1 class="display-4 fst-italic">
+                            <%= randomPost.title %>
+                        </h1>
+                        <div class="mb-1 text-body-secondary">
+                            <%= randomPost.date %>
+                        </div>
+
+                        <% if(randomPost.content.length> 250) { %>
+                            <p class="lead mb-0">
+                                <%= randomPost.content.slice(0, randomPost.content.lastIndexOf(" ", 250)) %>
+                                                        <span class=" collapse" id="randomPost<%= randomPost.id %>">
+                                    <%= randomPost.content.slice(randomPost.content.lastIndexOf(" ", 250)) %>
+                                                        </span>
+                                                </p>
+                                                <a href=" #randomPost<%=randomPost.id %>" class="toggle-link icon-link
+                                        gap-1
+                                        icon-link-hover"
+                                        data-bs-toggle="collapse" aria-expanded="false" aria-controls="<%=
+                                            randomPost.title %>"></a>
+                                            <% } else { %>
+                                                <p class="card-text mb-auto">
+                                                    <%= randomPost.content %>
+                                                </p>
+                                                <% } %>
+
+                                                    <% } else { %>
+                                                        <p class="fs-4">No random posts found</p>
+                                                        <% } %>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Recent Posts section -->
+    <section>
+        <div class="m-3">
+            <h2 class="fst-italic fw-normal fs-2 text-secondary">Recent Posts</h2>
+        </div>
+        <div class="row mb-2">
+            <% if (locals.lastPosts && locals.lastPosts.length> 0) { %>
+                <% lastPosts.forEach((post)=> { %>
+                    <div class="col-md-6">
+                        <div
+                            class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative bg-body-secondary">
+                            <div class="col p-4 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-success-emphasis">
+                                    <%= post.topic %>
+                                </strong>
+                                <div class="mb-1 text-body-secondary">
+                                    <%= post.author %>
+                                </div>
+                                <h3 class="mb-0">
+                                    <%= post.title %>
+                                </h3>
+                                <div class="mb-1 text-body-secondary">
+                                    <%= post.date %>
+                                </div>
+
+                                <% if(post.content.length> 250) { %>
+                                    <p class="lead mb-0">
+                                        <%= post.content.slice(0, post.content.lastIndexOf(" ", 250)) %>
+                                                                                        <span class=" collapse"
+                                            id="post<%= post.id %>">
+                                            <%= post.content.slice(post.content.lastIndexOf(" ", 250)) %>
+                                                                                        </span>
+                                                                                </p>
+                                                                                <a href=" #post<%=post.id %>"
+                                                class="toggle-link icon-link gap-1
+                                                icon-link-hover"
+                                                data-bs-toggle="collapse" aria-expanded="false" aria-controls="<%=
+                                                    post.title %>"></a>
+                                                    <% } else { %>
+                                                        <p class=" card-text mb-auto">
+                                                            <%= post.content %>
+                                                        </p>
+                                                        <% } %>
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+
+                        <% } else { %>
+                            <p class="fs-4">No recent posts found</p>
+                            <% } %>
+        </div>
+        </div>
+    </section>
+
+    <%- include("partials/footer.ejs") %>

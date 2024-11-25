@@ -1,0 +1,45 @@
+<%- include("partials/header.ejs") %>
+
+    <main>
+        <div class="d-flex justify-content-center mb-3 mt-4 text-primary">
+            <h3>Create your post</h3>
+        </div>
+        <div class="card mx-auto mb-5 bg-body-secondary">
+            <div class="card-body mt-4">
+                <div class="d-flex flex-column">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <form action="/post" method="post">
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput0" class="form-label fw-semibold">Topic</label>
+                                    <input name="topic" type="text" class="form-control" id="exampleFormControlInput0"
+                                        placeholder="Write the topic of your content here." required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label fw-semibold">Author</label>
+                                    <input name="author" type="text" class="form-control" id="exampleFormControlInput1"
+                                        placeholder="Write your name here." required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput2" class="form-label fw-semibold">Title</label>
+                                    <input name="title" type="text" class="form-control" id="exampleFormControlInput2"
+                                        placeholder="Write the title of your content here." required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlTextarea0"
+                                        class="form-label fw-semibold">Content</label>
+                                    <textarea name="content" class="form-control" id="exampleFormControlTextarea0"
+                                        rows="3" placeholder="Write your post here." required></textarea>
+                                </div>
+                                <div class="mt-5 d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-primary btn-block w-25">Post</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <%- include("partials/footer.ejs") %>

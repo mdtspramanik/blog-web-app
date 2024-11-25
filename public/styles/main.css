@@ -1,0 +1,19 @@
+.envelope-icon {
+    font-size: 24px;
+}
+
+.linkedin-icon {
+    font-size: 24px;
+}
+
+.github-icon {
+    font-size: 24px;
+}
+
+.toggle-link::after {
+    content: "Continue reading";
+}
+
+.toggle-link[aria-expanded="true"]::after {
+    content: "Collapse";
+}

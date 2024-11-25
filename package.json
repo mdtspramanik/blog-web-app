@@ -1,0 +1,26 @@
+{
+  "name": "blog-web-app",
+  "version": "1.0.0",
+  "description": "A blog web app developed with Express.js, EJS, Bootstrap, and Axios.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdtspramanik/blog-web-app.git"
+  },
+  "author": "Md. Tanvir Siddique Pramanik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdtspramanik/blog-web-app/issues"
+  },
+  "homepage": "https://github.com/mdtspramanik/blog-web-app#readme",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1"
+  }
+}
