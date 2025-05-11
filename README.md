@@ -6,7 +6,7 @@ A blog web app developed with Express.js, EJS, Bootstrap, and Axios.
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## How the Website Looks
+## How the Project Looks
 
 ![home-screenshot](https://github.com/user-attachments/assets/344c93fa-6fb0-4ef3-9ef4-b3044ddf2121)
 
